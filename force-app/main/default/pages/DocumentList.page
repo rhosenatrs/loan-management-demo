@@ -1,0 +1,14 @@
+<apex:page controller="ApplicationWizard">
+    <apex:form >
+        <apex:pageblock title="Document List">
+            <apex:pageBlockTable value="{!documentList}" var="v">
+                <apex:column headerValue="Name">
+                    <apex:inputField value="{!v.Name}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:commandButton value="Previous" action="{!GoToGuarantorList}"/>
+            <apex:commandButton value="Next" action="{!GoToSummary}"/>
+            <apex:commandButton value="Add" action="{!GoToDocument}"/>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,73 @@
+<apex:page docType="html-5.0" controller="ApplicationWizard" standardStylesheets="false">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    </head>
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"/>
+    <apex:includeScript value="https://code.jquery.com/jquery-3.2.1.slim.min.js"/>
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"/>
+    <apex:includeScript value="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"/>
+    
+    <script>
+    var app = angular.module("applicationModule", [])
+    .controller("applicationController", function($scope){
+        var newApplication = 
+            {
+                LoanAmount__c: 1000,
+                LoanTerm__c: "36 Months",
+                InterestRate__c: 10,
+                DownPayment__c: 100,
+                Status__c: "In Progress"
+            };
+        $scope.currentApplication = newApplication;
+        $scope.message = "Enter Application Details"
+        $scope.saveApplication = function changeLoanAmount(){
+            console.log("Call to save application goes here.")
+        }
+    });
+
+    </script>
+    <body class="container m-5" ng-app="applicationModule">
+        <div ng-controller= "applicationController">
+            <form>
+                <div id="application-detail">
+                    <h5 class="mb-3 border-bottom">
+                        {{message}}
+                    </h5>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Loan Amount</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" ng-model="currentApplication.LoanAmount__c"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Loan Term</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" ng-model="currentApplication.LoanTerm__c"></select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Interest Rate</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" ng-model="currentApplication.InterestRate__c"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Down Payment</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" ng-model="currentApplication.DownPayment__c"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Status</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" ng-model="currentApplication.Status__c"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button type="button" class="btn btn-primary" ng-click="saveApplication()">Save</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</apex:page>

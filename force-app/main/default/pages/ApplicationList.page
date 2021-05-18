@@ -1,0 +1,33 @@
+<apex:page controller="ApplicationWizard">
+ <apex:form >
+    <apex:pageblock title="List of Applications">
+    <apex:pageBlockTable value="{!applicationList}" var="a">
+        <apex:column headerValue="Loan Id">
+            <apex:outputField value="{!a.Name}"/>
+        </apex:column>
+        <apex:column headerValue="Applicant">
+            <apex:outputField value="{!a.Applicant__c}"/>
+        </apex:column>
+        <apex:column headerValue="Loan Amount">
+            <apex:outputField value="{!a.LoanAmount__c}"/>
+        </apex:column>
+        <apex:column headerValue="Loan Term">
+            <apex:outputField value="{!a.LoanTerm__c}"/>
+        </apex:column>
+        <apex:column headerValue="Interest">
+            <apex:outputField value="{!a.InterestRate__c}"/>
+        </apex:column>
+        <apex:column headerValue="Down Payment">
+            <apex:outputField value="{!a.DownPayment__c}"/>
+        </apex:column>
+        <apex:column headerValue="Status">
+            <apex:outputField value="{!a.Status__c}"/>
+        </apex:column>
+            <apex:column headerValue="Is Active">
+        <apex:outputField value="{!a.IsActive__c}"/>
+        </apex:column>
+    </apex:pageBlockTable>
+      <apex:commandButton value="New" action="{!GoToApplication}"/>
+    </apex:pageblock>
+  </apex:form>
+</apex:page>

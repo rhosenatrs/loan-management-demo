@@ -1,0 +1,25 @@
+<apex:page controller="ApplicationWizard">
+ <apex:form >
+    <apex:pageblock title="Enter Guarantor Detail">
+        <apex:pageBlockSection columns="2">
+            <apex:inputField value="{!guarantor.Name}"/>
+            <apex:inputField value="{!guarantor.FatherName__c}"/>
+            <apex:inputField value="{!guarantor.MotherName__c}"/>
+            <apex:inputField value="{!guarantor.BirthDate__c}"/>
+            <apex:inputField value="{!guarantor.EmailAddress__c}"/>
+            <apex:inputField value="{!guarantor.PhoneNumber__c}"/>
+            <apex:inputField value="{!guarantor.PermanentAddress__c}"/>
+            <apex:inputField value="{!guarantor.PresentAddress__c}"/>
+            <apex:inputField value="{!guarantor.NationalIdentityNumber__c}"/>
+            <apex:inputField value="{!guarantor.Profession__c}"/>
+            <apex:inputField value="{!guarantor.MaritalStatus__c}"/>
+            <apex:inputField value="{!guarantor.MonthlyIncome__c}"/>
+            <apex:inputField value="{!guarantor.Percentage__c}"/>
+            <apex:inputField value="{!guarantor.Relation__c}"/>
+            <apex:inputField value="{!guarantor.Remarks__c}"/>
+        </apex:pageBlockSection>
+    <apex:commandButton value="Back" action="{!GoToguarantorList}"/>
+    <apex:commandButton value="Save" action="{!AddGuarantor}"/>
+    </apex:pageblock>
+  </apex:form>
+</apex:page>

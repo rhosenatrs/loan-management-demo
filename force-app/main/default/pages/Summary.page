@@ -1,0 +1,109 @@
+<apex:page controller="ApplicationWizard">
+    <apex:pageMessages id="messages"/>
+    <apex:form >
+        <apex:pageblock title="Summary">
+            <apex:pageBlockSection title="Loan Details" columns="1">
+                <apex:outputField value="{!app.LoanAmount__c}"/>
+                <apex:outputField value="{!app.LoanTerm__c}"/>
+                <apex:outputField value="{!app.InterestRate__c}"/>
+                <apex:outputField value="{!app.DownPayment__c}"/>
+                <apex:outputField value="{!app.Status__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Applicant Details" columns="2">
+                <apex:outputField value="{!applicant.Name}"/>
+                <apex:outputField value="{!applicant.FatherName__c}"/>
+                <apex:outputField value="{!applicant.MotherName__c}"/>
+                <apex:outputField value="{!applicant.BirthDate__c}"/>
+                <apex:outputField value="{!applicant.EmailAddress__c}"/>
+                <apex:outputField value="{!applicant.PhoneNumber__c}"/>
+                <apex:outputField value="{!applicant.PermanentAddress__c}"/>
+                <apex:outputField value="{!applicant.PresentAddress__c}"/>
+                <apex:outputField value="{!applicant.NationalIdentityNumber__c}"/>
+                <apex:outputField value="{!applicant.Profession__c}"/>
+                <apex:outputField value="{!applicant.MaritalStatus__c}"/>
+                <apex:outputField value="{!applicant.MonthlyIncome__c}"/>
+                <apex:outputField value="{!applicant.Remarks__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Asset List">
+                <apex:pageBlockTable value="{!vehicleList}" var="v">
+                    <apex:column headerValue="Name">
+                        <apex:outputField value="{!v.Name}"/>
+                    </apex:column>
+                    <apex:column headerValue="Make">
+                        <apex:outputField value="{!v.Make__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Price">
+                        <apex:outputField value="{!v.Price__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Type">
+                        <apex:outputField value="{!v.Type__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Model">
+                        <apex:outputField value="{!v.Model__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Year">
+                        <apex:outputField value="{!v.Year__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Guarantor List">
+                <apex:pageBlockTable value="{!guarantorList}" var="v">
+                    <apex:column headerValue="Name">
+                        <apex:outputField value="{!v.Name}"/>
+                    </apex:column>
+                    <apex:column headerValue="Father Name">
+                        <apex:outputField value="{!v.FatherName__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Mother Name">
+                        <apex:outputField value="{!v.MotherName__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Birth Date">
+                        <apex:outputField value="{!v.BirthDate__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Email Address">
+                        <apex:outputField value="{!v.EmailAddress__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Phone Number">
+                        <apex:outputField value="{!v.PhoneNumber__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Permanent Address">
+                        <apex:outputField value="{!v.PermanentAddress__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Present Address">
+                        <apex:outputField value="{!v.PresentAddress__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="National Identity Number">
+                        <apex:outputField value="{!v.NationalIdentityNumber__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Profession">
+                        <apex:outputField value="{!v.Profession__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Monthly Income">
+                        <apex:outputField value="{!v.MonthlyIncome__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Percentage">
+                        <apex:outputField value="{!v.Percentage__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Marital Status">
+                        <apex:outputField value="{!v.MaritalStatus__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Relation">
+                        <apex:outputField value="{!v.Relation__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Remarks">
+                        <apex:outputField value="{!v.Remarks__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>    
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Document List">
+                <apex:pageBlockTable value="{!documentList}" var="v">
+                    <apex:column headerValue="Name">
+                        <apex:outputField value="{!v.Name}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:commandButton value="Previous" action="{!GoToDocument}"/>
+            <apex:commandButton value="Submit" action="{!Save}"/>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

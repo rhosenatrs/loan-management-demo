@@ -1,0 +1,12 @@
+<apex:page controller="ApplicationWizard">
+    <apex:form >
+        <apex:pageblock title="Upload Documents">
+            <apex:pageBlockSection columns="1">
+                <apex:inputField value="{!document.Name}"/>
+            </apex:pageBlockSection>
+            <apex:commandButton value="Previous" action="{!GoToDocumentList}"/>
+            <apex:commandButton value="Save" action="{!AddDocument}"/>
+        </apex:pageblock>
+    </apex:form>
+     <apex:relatedList subject="{!document}"  list="CombinedAttachments" />
+</apex:page>

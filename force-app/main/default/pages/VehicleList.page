@@ -1,0 +1,29 @@
+<apex:page controller="ApplicationWizard">
+ <apex:form >
+  <apex:pageblock title="Asset List">
+    <apex:pageBlockTable value="{!vehicleList}" var="v">
+    <apex:column headerValue="Name">
+        <apex:inputField value="{!v.Name}"/>
+    </apex:column>
+    <apex:column headerValue="Make">
+        <apex:inputField value="{!v.Make__c}"/>
+    </apex:column>
+    <apex:column headerValue="Price">
+        <apex:inputField value="{!v.Price__c}"/>
+    </apex:column>
+    <apex:column headerValue="Type">
+        <apex:inputField value="{!v.Type__c}"/>
+    </apex:column>
+    <apex:column headerValue="Model">
+        <apex:inputField value="{!v.Model__c}"/>
+    </apex:column>
+    <apex:column headerValue="Year">
+        <apex:inputField value="{!v.Year__c}"/>
+    </apex:column>
+  </apex:pageBlockTable>
+  <apex:commandButton value="Previous" action="{!GoToApplication}"/>
+  <apex:commandButton value="Next" action="{!GoToGuarantorList}"/>
+  <apex:commandButton value="Add" action="{!GoToVehicle}"/>
+  </apex:pageblock>
+  </apex:form>
+</apex:page>

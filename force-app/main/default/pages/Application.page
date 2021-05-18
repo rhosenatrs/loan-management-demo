@@ -1,0 +1,32 @@
+<apex:page controller="ApplicationWizard">
+ <apex:form >
+  <apex:pageblock title="Enter Application Details">
+    <apex:pageBlockSection columns="1">
+        <apex:inputField value="{!app.LoanAmount__c}"/>
+        <apex:inputField value="{!app.LoanTerm__c}"/>
+        <apex:inputField value="{!app.InterestRate__c}"/>
+        <apex:inputField value="{!app.DownPayment__c}"/>
+        <apex:inputField value="{!app.Status__c}"/>
+    </apex:pageBlockSection>
+  </apex:pageblock>
+   <apex:pageblock title="Enter Applicant Details">
+    <apex:pageBlockSection columns="1">
+        <apex:inputField value="{!applicant.Name}"/>
+        <apex:inputField value="{!applicant.FatherName__c}"/>
+        <apex:inputField value="{!applicant.MotherName__c}"/>
+        <apex:inputField value="{!applicant.BirthDate__c}"/>
+        <apex:inputField value="{!applicant.EmailAddress__c}"/>
+        <apex:inputField value="{!applicant.PhoneNumber__c}"/>
+        <apex:inputField value="{!applicant.PermanentAddress__c}"/>
+        <apex:inputField value="{!applicant.PresentAddress__c}"/>
+        <apex:inputField value="{!applicant.NationalIdentityNumber__c}"/>
+        <apex:inputField value="{!applicant.Profession__c}"/>
+        <apex:inputField value="{!applicant.MaritalStatus__c}"/>
+        <apex:inputField value="{!applicant.MonthlyIncome__c}"/>
+        <apex:inputField value="{!applicant.Remarks__c}"/>
+    </apex:pageBlockSection>
+  <apex:commandButton value="Previous" action="{!GoToApplicationList}"/>
+  <apex:commandButton value="Next" action="{!GoToVehicleList}"/>
+  </apex:pageblock>
+  </apex:form>
+</apex:page>

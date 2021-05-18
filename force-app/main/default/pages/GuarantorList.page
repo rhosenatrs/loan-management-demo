@@ -1,0 +1,56 @@
+<apex:page controller="ApplicationWizard">
+ <apex:form >
+  <apex:pageblock title="Guarantor List">
+    <apex:pageBlockTable value="{!guarantorList}" var="v">
+         <apex:column headerValue="Name">
+            <apex:inputField value="{!v.Name}"/>
+        </apex:column>
+        <apex:column headerValue="Father Name">
+            <apex:inputField value="{!v.FatherName__c}"/>
+        </apex:column>
+        <apex:column headerValue="Mother Name">
+            <apex:inputField value="{!v.MotherName__c}"/>
+        </apex:column>
+        <apex:column headerValue="Birth Date">
+            <apex:inputField value="{!v.BirthDate__c}"/>
+        </apex:column>
+        <apex:column headerValue="Email Address">
+            <apex:inputField value="{!v.EmailAddress__c}"/>
+        </apex:column>
+        <apex:column headerValue="Phone Number">
+            <apex:inputField value="{!v.PhoneNumber__c}"/>
+        </apex:column>
+        <apex:column headerValue="Permanent Address">
+            <apex:inputField value="{!v.PermanentAddress__c}"/>
+        </apex:column>
+           <apex:column headerValue="Present Address">
+            <apex:inputField value="{!v.PresentAddress__c}"/>
+        </apex:column>
+        <apex:column headerValue="National Identity Number">
+            <apex:inputField value="{!v.NationalIdentityNumber__c}"/>
+        </apex:column>
+        <apex:column headerValue="Profession">
+            <apex:inputField value="{!v.Profession__c}"/>
+        </apex:column>
+        <apex:column headerValue="Monthly Income">
+            <apex:inputField value="{!v.MonthlyIncome__c}"/>
+        </apex:column>
+        <apex:column headerValue="Percentage">
+            <apex:inputField value="{!v.Percentage__c}"/>
+        </apex:column>
+        <apex:column headerValue="Marital Status">
+            <apex:inputField value="{!v.MaritalStatus__c}"/>
+        </apex:column>
+        <apex:column headerValue="Relation">
+            <apex:inputField value="{!v.Relation__c}"/>
+        </apex:column>
+        <apex:column headerValue="Remarks">
+            <apex:inputField value="{!v.Remarks__c}"/>
+        </apex:column>
+    </apex:pageBlockTable>
+    <apex:commandButton value="Previous" action="{!GoToVehicleList}"/>
+    <apex:commandButton value="Next" action="{!GoToDocumentList}"/>
+    <apex:commandButton value="Add" action="{!GoToGuarantor}"/>
+  </apex:pageblock>
+  </apex:form>
+</apex:page>
